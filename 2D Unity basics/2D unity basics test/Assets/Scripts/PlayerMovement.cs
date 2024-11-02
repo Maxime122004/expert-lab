@@ -27,23 +27,21 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             moveInput = -1f;
-            Debug.Log("Left");
             spriteRenderer.flipX = true;
         }
 
         if (Input.GetKey(KeyCode.D))
         {
             moveInput = 1f;
-            Debug.Log("Right");
             spriteRenderer.flipX = false;
 
         }
 
         rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
 
-        bool isRunning = moveInput != 0;
-        animator.SetBool("isRunning", isRunning);
-        animator.SetFloat("moveDirection", moveInput);
+        // bool isRunning = moveInput != 0;
+        // animator.SetBool("isRunning", isRunning);
+        // animator.SetFloat("moveDirection", moveInput);
 
         // Jumping
         if ((Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Space)) && isGrounded)
@@ -57,7 +55,6 @@ public class PlayerMovement : MonoBehaviour
         if (collision.collider.CompareTag("Ground"))
         {
             isGrounded = true;
-            Debug.Log("Grounded");
         }
     }
 
@@ -66,7 +63,6 @@ public class PlayerMovement : MonoBehaviour
         if (collision.collider.CompareTag("Ground"))
         {
             isGrounded = false;
-            Debug.Log("Not grounded");
         }
     }
 }
