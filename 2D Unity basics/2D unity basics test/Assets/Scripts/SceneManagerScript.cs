@@ -7,28 +7,27 @@ public class SceneManagerScript : MonoBehaviour
 {
     GameObject player;
     string nextLevel;
+    [SerializeField] Animator transitionAnim;
     void Start()
     {
         player = GameObject.FindWithTag("Player");
-        if (player != null)
-        {
-            Debug.Log("Player found: " + player.name);
-        }
-
         nextLevel = GameObject.FindWithTag("NextLevel").name;
-        if (nextLevel != null)
-        {
-            Debug.Log("Next scene name found: " + nextLevel);
-        }
     }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(other);
         if (other.gameObject == player)
         {
-            Debug.Log("Next scene loaded: " + nextLevel);
-            SceneManager.LoadScene(nextLevel);
+            transitionAnim.SetTrigger("End");
+            StartCoroutine(LoadNextSceneAfterDelay(1f)); // Start a coroutine with a 1-second delay
         }
     }
+
+    private IEnumerator LoadNextSceneAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay); // Wait for the specified delay
+        SceneManager.LoadScene(nextLevel);
+        transitionAnim.SetTrigger("Start"); // Optionally trigger the "Start" animation after loading the scene
+    }
+
+
 }
