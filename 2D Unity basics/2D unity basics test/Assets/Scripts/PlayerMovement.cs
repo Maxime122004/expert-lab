@@ -10,10 +10,14 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded = false;
 
     private Rigidbody2D rb;
+    private Animator animator;
+    private SpriteRenderer spriteRenderer;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -24,16 +28,22 @@ public class PlayerMovement : MonoBehaviour
         {
             moveInput = -1f;
             Debug.Log("Left");
+            spriteRenderer.flipX = true;
         }
 
         if (Input.GetKey(KeyCode.D))
         {
             moveInput = 1f;
             Debug.Log("Right");
+            spriteRenderer.flipX = false;
 
         }
 
         rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
+
+        bool isRunning = moveInput != 0;
+        animator.SetBool("isRunning", isRunning);
+        animator.SetFloat("moveDirection", moveInput);
 
         // Jumping
         if ((Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Space)) && isGrounded)
