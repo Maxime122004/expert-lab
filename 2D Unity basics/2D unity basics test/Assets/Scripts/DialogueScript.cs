@@ -9,7 +9,7 @@ public class DialogueScript : MonoBehaviour
     public GameObject dialoguePanel;
     public Text dialogueText;
     public string[] dialogue;
-    private int index;
+    private int index = 0;
 
     public GameObject contButton;
     GameObject player;
@@ -19,31 +19,32 @@ public class DialogueScript : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("Player");
+        dialogueText.text = "";
     }
 
     void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.E) && playerIsClose)
         {
-            Debug.Log("Player is close enough.");
-            if (dialoguePanel.activeInHierarchy)
-            {
-                ZeroText();
-            }
-            else
+            if (!dialoguePanel.activeInHierarchy)
             {
                 dialoguePanel.SetActive(true);
                 StartCoroutine(Typing());
             }
-        }
+            else if (dialogueText.text == dialogue[index])
+            {
+                NextLine();
+            }
 
-        if(dialogueText.text == dialogue[index])
+        }
+        if (Input.GetKeyDown(KeyCode.Q) && dialoguePanel.activeInHierarchy)
         {
-            contButton.SetActive(true);
+            RemoveText();
         }
     }
 
-    public void ZeroText()
+    public void RemoveText()
     {
         dialogueText.text = "";
         index = 0;
@@ -61,9 +62,7 @@ public class DialogueScript : MonoBehaviour
 
     public void NextLine()
     {
-
-        contButton.SetActive(false);
-        if (index < dialogue.Length)
+        if (index < dialogue.Length - 1)
         {
             index++;
             dialogueText.text = "";
@@ -71,25 +70,24 @@ public class DialogueScript : MonoBehaviour
         }
         else
         {
-            ZeroText();
+            RemoveText();
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject == player)
+        if (other.CompareTag("Player"))
         {
             playerIsClose = true;
         }
     }
 
-
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject == player)
+        if (other.CompareTag("Player"))
         {
             playerIsClose = false;
-            ZeroText();
+            RemoveText();
         }
     }
 }
