@@ -16,6 +16,8 @@ public class DialogueScript : MonoBehaviour
     public float wordSpeed;
     public bool playerIsClose;
 
+    private Coroutine typingCoroutine;
+
     void Start()
     {
         player = GameObject.FindWithTag("Player");
@@ -30,7 +32,7 @@ public class DialogueScript : MonoBehaviour
             if (!dialoguePanel.activeInHierarchy)
             {
                 dialoguePanel.SetActive(true);
-                StartCoroutine(Typing());
+                typingCoroutine = StartCoroutine(Typing());
             }
             else if (dialogueText.text == dialogue[index])
             {
@@ -46,6 +48,11 @@ public class DialogueScript : MonoBehaviour
 
     public void RemoveText()
     {
+        if (typingCoroutine != null)
+        {
+            StopCoroutine(typingCoroutine);
+            typingCoroutine = null;
+        }
         dialogueText.text = "";
         index = 0;
         dialoguePanel.SetActive(false);
@@ -53,6 +60,7 @@ public class DialogueScript : MonoBehaviour
 
     IEnumerator Typing()
     {
+        dialogueText.text = "";
         foreach (char letter in dialogue[index].ToCharArray())
         {
             dialogueText.text += letter;
@@ -65,8 +73,11 @@ public class DialogueScript : MonoBehaviour
         if (index < dialogue.Length - 1)
         {
             index++;
-            dialogueText.text = "";
-            StartCoroutine(Typing());
+            if (typingCoroutine != null)
+            {
+                StopCoroutine(typingCoroutine);
+            }
+            typingCoroutine = StartCoroutine(Typing());
         }
         else
         {
