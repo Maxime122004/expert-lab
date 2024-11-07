@@ -132,6 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6898302}
   - component: {fileID: 6898301}
+  - component: {fileID: 6898303}
   m_Layer: 0
   m_Name: BackgroundSquare
   m_TagString: Untagged
@@ -206,6 +207,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6898303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6898300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 717c31dfacfa6bd41954ffcdb56a3066, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DefaultColor: {r: 1, g: 1, b: 1, a: 1}
+  HighLightColor: {r: 1, g: 0.018440247, b: 0, a: 1}
+  LerpSpeed: 1
 --- !u!1 &391643690
 GameObject:
   m_ObjectHideFlags: 0
