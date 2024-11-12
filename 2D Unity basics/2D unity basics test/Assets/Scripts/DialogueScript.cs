@@ -11,17 +11,18 @@ public class DialogueScript : MonoBehaviour
     public string[] dialogue;
     private int index = 0;
 
-    public GameObject contButton;
     GameObject player;
     public float wordSpeed;
     public bool playerIsClose;
 
     private Coroutine typingCoroutine;
+    private ColorLerp colorLerp;
 
     void Start()
     {
         player = GameObject.FindWithTag("Player");
         dialogueText.text = "";
+        colorLerp = gameObject.GetComponent<ColorLerp>();
     }
 
     void Update()
@@ -29,6 +30,15 @@ public class DialogueScript : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E) && playerIsClose)
         {
+            if (colorLerp != null)
+            {
+                StartCoroutine(colorLerp.UpdateColor());
+            }
+            else
+            {
+                Debug.Log("colorlerp not found");
+            }
+
             if (!dialoguePanel.activeInHierarchy)
             {
                 dialoguePanel.SetActive(true);
@@ -56,6 +66,12 @@ public class DialogueScript : MonoBehaviour
         dialogueText.text = "";
         index = 0;
         dialoguePanel.SetActive(false);
+
+        if (colorLerp != null)
+        {
+            StopCoroutine(colorLerp.UpdateColor());
+            colorLerp.ResetColor();
+        }
     }
 
     IEnumerator Typing()
