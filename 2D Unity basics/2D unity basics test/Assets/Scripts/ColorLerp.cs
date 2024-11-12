@@ -22,38 +22,28 @@ public class ColorLerp : MonoBehaviour
             }
             else
             {
-                spriteRenderer.color = DefaultColor; // Sets initial color
+                spriteRenderer.color = DefaultColor;
             }
-        }
-        else
-        {
-            Debug.LogError("BackgroundColor reference is missing in ColorLerp!");
         }
     }
 
     public IEnumerator UpdateColor()
     {
-        if (spriteRenderer == null)
-        {
-            Debug.LogError("SpriteRenderer is null in UpdateColor!");
-            yield break;
-        }
-
-        Debug.Log("Starting color lerp...");
         float lerpProgress = 0f;
 
         while (lerpProgress < 1f)
         {
             lerpProgress += Time.deltaTime * LerpSpeed;
+
             Color lerpedColor = Color.Lerp(DefaultColor, HighLightColor, lerpProgress);
             spriteRenderer.color = lerpedColor;
 
-            Debug.Log($"Lerping Color: {lerpedColor}");
             yield return new WaitForEndOfFrame();
         }
 
-        spriteRenderer.color = HighLightColor; // Ensures color reaches HighLightColor
-        Debug.Log("Lerp complete!");
+        spriteRenderer.color = HighLightColor;
+        
+        DefaultColor = HighLightColor;
     }
 
     public void ResetColor()
@@ -61,7 +51,6 @@ public class ColorLerp : MonoBehaviour
         if (spriteRenderer != null)
         {
             spriteRenderer.color = DefaultColor;
-            Debug.Log("Color reset to DefaultColor.");
         }
     }
 }
