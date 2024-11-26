@@ -132,8 +132,8 @@ TextureImporter:
         rgba: 4278255615
     - name: UpperTorso
       guid: f4c99d567efd535448ed6b0befc907ef
-      position: {x: 46.96606, y: 0.000011276474, z: 0}
-      rotation: {x: 0, y: 0, z: 0.046074502, w: 0.998938}
+      position: {x: 46.96606, y: 0.000007462155, z: 0}
+      rotation: {x: 0, y: 0, z: 0.04607446, w: 0.998938}
       length: 49.888466
       parentId: 1
       color:
@@ -143,15 +143,15 @@ TextureImporter:
       guid: 98a1a54a668fd6642a41fc55f4575943
       position: {x: 106.450096, y: -21.516712, z: -1}
       rotation: {x: 0, y: 0, z: -0.02331575, w: 0.99972814}
-      length: 32.490135
+      length: 32.49014
       parentId: 2
       color:
         serializedVersion: 2
         rgba: 4294967040
     - name: Head
       guid: 24217edb99e1e9045bfbd568f3a3e92d
-      position: {x: 32.490143, y: 0.00001780481, z: 0}
-      rotation: {x: 0, y: 0, z: -0.29554263, w: 0.9553296}
+      position: {x: 32.490147, y: 0.000021288162, z: 0}
+      rotation: {x: 0, y: 0, z: -0.29554266, w: 0.9553296}
       length: 19.757927
       parentId: 3
       color:
@@ -161,14 +161,14 @@ TextureImporter:
       guid: 23a558d0a2414174bb7e134e200487c5
       position: {x: 288.39328, y: -152.57475, z: 0}
       rotation: {x: 0, y: -0, z: 0.99997365, w: 0.007260811}
-      length: 75.97314
+      length: 75.97312
       parentId: 0
       color:
         serializedVersion: 2
         rgba: 4294902015
     - name: LowerSkirt
       guid: 5b4093c2108a3224d834119ef48c1708
-      position: {x: 75.97312, y: -0.00006634432, z: 0}
+      position: {x: 75.97311, y: -0.00006679022, z: 0}
       rotation: {x: 0, y: 0, z: 0.0053455885, w: 0.99998575}
       length: 23.985382
       parentId: 5
@@ -179,14 +179,14 @@ TextureImporter:
       guid: 46a2cc43e3e75c94abb5a5ab18b623d3
       position: {x: 62.976414, y: 29.150154, z: -1}
       rotation: {x: 0, y: 0, z: -0.0010066179, w: 0.9999995}
-      length: 64.85189
+      length: 64.85188
       parentId: 6
       color:
         serializedVersion: 2
         rgba: 4278255488
     - name: LowerLeftLeg
       guid: 655b7a90a4c28654890eec2824d6fb1f
-      position: {x: 64.851875, y: -0.00010090768, z: 0}
+      position: {x: 64.85187, y: -0.00011663354, z: 0}
       rotation: {x: 0, y: 0, z: -0.011584467, w: 0.9999329}
       length: 71.12355
       parentId: 7
@@ -195,8 +195,8 @@ TextureImporter:
         rgba: 4286643968
     - name: LeftFoot
       guid: 6add42ff1c2866a4b9a8c294103a5108
-      position: {x: 71.12355, y: -0.00007132248, z: 0}
-      rotation: {x: 0, y: 0, z: 0.5331154, w: 0.8460426}
+      position: {x: 71.12355, y: -0.000056813926, z: 0}
+      rotation: {x: 0, y: 0, z: 0.53311545, w: 0.8460425}
       length: 30.198624
       parentId: 8
       color:
@@ -206,23 +206,23 @@ TextureImporter:
       guid: 8fcf132d0d6893d49bb015dd192f5df0
       position: {x: 65.9625, y: -36.088, z: -1}
       rotation: {x: 0, y: 0, z: -0.0010918302, w: 0.9999994}
-      length: 64.40785
+      length: 64.40786
       parentId: 6
       color:
         serializedVersion: 2
         rgba: 4294901888
     - name: LowerRightLeg
       guid: 13bd22ad08f8fe64d8e4aed3e584ce84
-      position: {x: 64.40786, y: -0.0000011371308, z: 0}
+      position: {x: 64.40787, y: -0.0000012951951, z: 0}
       rotation: {x: 0, y: 0, z: 0.016220203, w: 0.99986845}
-      length: 75.94591
+      length: 75.94589
       parentId: 10
       color:
         serializedVersion: 2
         rgba: 4286578943
     - name: RightFoot
       guid: 746c6c22e4cddd0499a4366bad050c28
-      position: {x: 75.94589, y: 0.000042589047, z: 0}
+      position: {x: 75.945885, y: 0.00004277909, z: 0}
       rotation: {x: 0, y: 0, z: 0.52073723, w: 0.853717}
       length: 21.8467
       parentId: 11
@@ -232,26 +232,26 @@ TextureImporter:
     - name: UpperRightArm
       guid: 4f586ce9bd29eba419f68eaeecf4334e
       position: {x: 151.33015, y: -106.391335, z: 0}
-      rotation: {x: 0, y: -0, z: 0.97100955, w: 0.23904093}
-      length: 61.603252
+      rotation: {x: 0, y: -0, z: 0.9721742, w: 0.23425907}
+      length: 66.55944
       parentId: 2
       color:
         serializedVersion: 2
         rgba: 4278255360
     - name: MidRightArm
       guid: 76bbfbb3b2510c64bbcbce82beebd14f
-      position: {x: 61.60327, y: -0.0000069290672, z: 0}
-      rotation: {x: 0, y: 0, z: 0.15709524, w: 0.98758346}
-      length: 58.285168
+      position: {x: 66.55943, y: -0.000012999689, z: 0}
+      rotation: {x: 0, y: 0, z: 0.16576438, w: 0.9861654}
+      length: 69.72796
       parentId: 13
       color:
         serializedVersion: 2
         rgba: 4294967040
     - name: LowerRightArm
       guid: b84b9d4d403e0ee4ebaaea9c63242f24
-      position: {x: 58.28517, y: 0.000005533193, z: 0}
-      rotation: {x: 0, y: 0, z: 0.056217562, w: 0.99841857}
-      length: 43.13457
+      position: {x: 69.72797, y: 0.00000492177, z: 0}
+      rotation: {x: 0, y: 0, z: 0.058226664, w: 0.9983035}
+      length: 26.810665
       parentId: 14
       color:
         serializedVersion: 2
@@ -259,26 +259,26 @@ TextureImporter:
     - name: UpperLeftArm
       guid: d3066176c634b76428e6fa86610d0748
       position: {x: 143.8113, y: -248.06, z: -2}
-      rotation: {x: 0, y: -0, z: 0.99915016, w: 0.04121848}
-      length: 55.972176
+      rotation: {x: 0, y: -0, z: 0.99863464, w: 0.052238356}
+      length: 69.286095
       parentId: 2
       color:
         serializedVersion: 2
         rgba: 4294902015
     - name: MidLeftArm
       guid: 908c70a6bf3be9947880d58ca585d3e7
-      position: {x: 55.97221, y: 0.000021817974, z: 0}
-      rotation: {x: 0, y: 0, z: 0.07061323, w: 0.99750376}
-      length: 56.728138
+      position: {x: 69.28609, y: 0.00002485378, z: 0}
+      rotation: {x: 0, y: 0, z: 0.10695436, w: 0.99426395}
+      length: 54.806892
       parentId: 16
       color:
         serializedVersion: 2
         rgba: 4278190335
     - name: LowerLeftArm
       guid: 24ff3312d6b99304aa9c8b6f3e96487b
-      position: {x: 56.72815, y: 0.000020283405, z: 0}
-      rotation: {x: 0, y: 0, z: 0.0024533318, w: 0.999997}
-      length: 44.609127
+      position: {x: 61.31665, y: -1.4287863, z: 0}
+      rotation: {x: 0, y: 0, z: -0.013328781, w: 0.99991125}
+      length: 33.66182
       parentId: 17
       color:
         serializedVersion: 2
@@ -6171,8 +6171,8 @@ TextureImporter:
       boneIndex[1]: 2
       boneIndex[2]: 0
       boneIndex[3]: 0
-    - weight[0]: 0.71734554
-      weight[1]: 0.15990755
+    - weight[0]: 0.7173456
+      weight[1]: 0.15990756
       weight[2]: 0.12274686
       weight[3]: 0
       boneIndex[0]: 1
