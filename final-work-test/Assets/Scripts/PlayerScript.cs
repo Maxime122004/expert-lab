@@ -9,12 +9,13 @@ public class PlayerScript : MonoBehaviour
     private Rigidbody2D rb;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
-    
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        animator.SetBool("isWalking", false);
     }
 
     void Update()
@@ -25,16 +26,22 @@ public class PlayerScript : MonoBehaviour
         {
             moveInput = 1f;
             spriteRenderer.flipX = true;
+            animator.SetBool("isWalking", true);
         }
 
         if (Input.GetKey(KeyCode.A))
         {
             moveInput = -1f;
             spriteRenderer.flipX = false;
-
+            animator.SetBool("isWalking", true);
         }
-        
+
+        if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
+        {
+            animator.SetBool("isWalking", false);
+        }
+
         rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
-        
+
     }
 }
